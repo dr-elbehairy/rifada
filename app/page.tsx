@@ -21,7 +21,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-3 mt-7">
               <Link href="/buy/" className="bg-gold text-navy font-bold rounded-xl px-6 py-3">ابدأ العرض التجريبي</Link>
               <Link href="/control/" className="border border-white/40 rounded-xl px-6 py-3 font-semibold">غرفة المخاطر مباشرة</Link>
-              <a href={asset("/video/crowd-shield-demo.mp4")} target="_blank" rel="noreferrer" className="border border-gold/60 text-gold rounded-xl px-6 py-3 font-semibold">▶ فيديو العرض (2:33)</a>
+              <a href={asset("/video/crowd-shield-demo.mp4")} target="_blank" rel="noreferrer" className="border border-gold/60 text-gold rounded-xl px-6 py-3 font-semibold">▶ فيديو العرض (2:31)</a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-3">
