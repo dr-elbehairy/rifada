@@ -16,7 +16,7 @@ export default function MyPolicy() {
     return (
       <div className="mx-auto max-w-[900px] px-4 py-16 text-center">
         <h1 className="text-[24px] font-bold text-navy">لا توجد وثيقة بعد</h1>
-        <p className="text-muted mt-2">اشترِ تذكرة تجريبية وأضف درع الحشود، ثم عد إلى هنا لتتابع وثيقتك أثناء الفعالية.</p>
+        <p className="text-muted mt-2">اشترِ تذكرة تجريبية وأضف رِفادة، ثم عد إلى هنا لتتابع وثيقتك أثناء الفعالية.</p>
         <Link href="/buy/" className="inline-block mt-6 bg-navy text-white rounded-xl px-6 py-3 font-bold">اشترِ تذكرة</Link>
       </div>
     );
@@ -37,7 +37,7 @@ export default function MyPolicy() {
         <Phone>
           <div className="bg-navy text-white px-5 pt-10 pb-4">
             <div className="flex justify-between items-start">
-              <div><div className="text-[11.5px] opacity-80">درع الحشود · وثيقة فعالية</div><div className="text-[17px] font-bold mt-0.5">{EVENT.short}</div></div>
+              <div><div className="text-[11.5px] opacity-80">رِفادة · وثيقة فعالية</div><div className="text-[17px] font-bold mt-0.5">{EVENT.short}</div></div>
               <span className={`chip ${active ? "bg-[#e6f3ec] text-ok" : "bg-white/15 text-white"}`}>{active ? "تغطية فعّالة" : "تبدأ 15:00"}</span>
             </div>
             <div className="mt-3 text-[12px] opacity-90">{myPolicy.holder} · <span className="num">{myPolicy.id}</span></div>
@@ -45,7 +45,7 @@ export default function MyPolicy() {
           <div className="p-4 space-y-3">
             <div className="rounded-xl bg-[#fdf9ee] border border-gold p-3 flex items-center justify-between">
               <div><div className="text-[11.5px] text-muted">رصيد التعويضات</div><div className="num text-[26px] font-bold text-navy">{fmtN(balance)} ر.س</div></div>
-              <QRCodeSVG value={`CROWD-SHIELD|${myPolicy.id}`} size={64} fgColor="#1c2a5d" />
+              <QRCodeSVG value={`RIFADA|${myPolicy.id}`} size={64} fgColor="#1c2a5d" />
             </div>
             {settled.map((x) => (
               <div key={x.id} className="rounded-xl bg-[#e6f3ec] border border-[#bfe3d3] p-3 text-[12.5px] text-ok font-semibold fade-in">

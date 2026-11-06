@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""درع الحشود — خط تقدير كثافة الحشود (النموذج الأولي v2: استدلال مُجزّأ).
+"""رِفادة — خط تقدير كثافة الحشود (النموذج الأولي v2: استدلال مُجزّأ).
 
 المشكلة: كاشف الأشخاص على الإطار كاملًا يفوّت الأشخاص الصغار في الحشود (تقليل عدّ حاد).
 الحل في هذا الإصدار: تقسيم الإطار إلى بلاطات متداخلة بدقة عالية (على طريقة SAHI)، رصد الأشخاص
@@ -11,7 +11,7 @@
   <out>/<name>.json  : سلسلة زمنية لكل قطاع + بيانات المعايرة + ملاحظات منهجية
   <out>/<name>/frame_XXX.jpg : إطارات موسومة (صناديق + شبكة ملوّنة بالعتبات + خريطة حرارية)
 الاستخدام:
-  python run_density.py --video data/shibuya_crossing.webm --name shibuya --fps 1 --out ../crowd-shield/public/cv \
+  python run_density.py --video data/shibuya_crossing.webm --name shibuya --fps 1 --out ../rifada/public/cv \
       --row_areas 260,170,110 --tile 640 --overlap 0.25
 حدود معلنة: في الحشود شديدة الكثافة (> 3 شخص/م²) يبقى الكاشف أقل من العدّ الحقيقي؛ النسخة التشغيلية
 تضيف نموذج خريطة كثافة (CSRNet / DM-Count) بأوزان مدرّبة ومُدقّقة داخليًا، ويُستخدم الكاشف للمشاهد المتوسطة.
@@ -99,7 +99,7 @@ while k < a.max_frames:
         cv2.rectangle(vis, (x1 + 8, y1 + 8), (x1 + 22 + tw, y1 + 22 + th), col, -1)
         cv2.putText(vis, label, (x1 + 15, y1 + 15 + th), cv2.FONT_HERSHEY_SIMPLEX, 0.85, (255, 255, 255), 2, cv2.LINE_AA)
     total = int(len(pts)); dmax = max(s["density"] for s in sectors)
-    bar = f"CROWD SHIELD CV  |  t={t:5.1f}s  |  persons={total}  |  max density={dmax:.2f} p/m2  |  {os.path.basename(a.model)[:-3]} tiled {a.tile}->{a.infer}px + NMS"
+    bar = f"RIFADA CV  |  t={t:5.1f}s  |  persons={total}  |  max density={dmax:.2f} p/m2  |  {os.path.basename(a.model)[:-3]} tiled {a.tile}->{a.infer}px + NMS"
     cv2.rectangle(vis, (0, H - 46), (W, H), (35, 28, 18), -1)
     cv2.putText(vis, bar, (16, H - 15), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255, 255, 255), 2, cv2.LINE_AA)
     cv2.imwrite(os.path.join(a.out, a.name, f"frame_{k:03d}.jpg"), cv2.resize(vis, (a.width, int(H * a.width / W))), [cv2.IMWRITE_JPEG_QUALITY, 74])

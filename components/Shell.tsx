@@ -30,7 +30,7 @@ function SimDriver() {
           const dt = (ts - last.current) / 1000;
           const nt = s.t + dt * s.speed;
           if (nt >= EVENT.simEnd) { s.setT(EVENT.simEnd); s.pause(); } else useSim.setState({ t: nt });
-          if (Math.floor(nt) !== Math.floor(s.t)) { try { const raw = sessionStorage.getItem("crowd-shield-demo-v1"); const v = raw ? JSON.parse(raw) : {}; sessionStorage.setItem("crowd-shield-demo-v1", JSON.stringify({ ...v, t: nt })); } catch { /* تجاهل */ } }
+          if (Math.floor(nt) !== Math.floor(s.t)) { try { const raw = sessionStorage.getItem("rifada-demo-v1"); const v = raw ? JSON.parse(raw) : {}; sessionStorage.setItem("rifada-demo-v1", JSON.stringify({ ...v, t: nt })); } catch { /* تجاهل */ } }
         }
         last.current = ts;
       } else last.current = null;
@@ -52,8 +52,8 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <svg width="34" height="38" viewBox="0 0 34 38" aria-hidden><path d="M17 1 L32 7 V18 C32 28 25 34 17 37 C9 34 2 28 2 18 V7 Z" fill="#1c2a5d" /><path d="M17 6 L27 10 V18 C27 25 22 29.5 17 31.5 Z" fill="#cd9f36" /><circle cx="12" cy="17" r="2.2" fill="#fff" /><circle cx="12" cy="24" r="2.2" fill="#fff" /></svg>
             <div className="leading-tight">
-              <div className="text-[17px] font-bold text-navy">درع الحشود</div>
-              <div className="text-[11px] text-muted">نموذج أولي · برمجان التأمين 2026</div>
+              <div className="text-[17px] font-bold text-navy">رِفادة</div>
+              <div className="text-[11px] text-muted">حماية فورية لضيوف المملكة · نموذج أولي</div>
             </div>
           </Link>
           <nav className="flex-1 overflow-x-auto">

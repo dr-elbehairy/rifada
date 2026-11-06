@@ -1,9 +1,11 @@
-# درع الحشود — Crowd Shield
+# رِفادة — Rifada
+
+> **الاسم:** الرِّفادة في تاريخ مكة ضيافة الحجاج وخدمتهم؛ ورِفادة اليوم حماية فورية تصل إلى ضيف المملكة في اللحظة التي يحتاجها.
 
 **نموذج أولي لبرمجان التأمين 2026 (هيئة التأمين · منظومة الابتكار) — المسار 04: الفعاليات الكبرى والتجمعات الحاشدة.**
 تأمين بارامتري فوري للفعاليات الكبرى يُفعَّل بالرصد الذكي، لا بالمطالبة. مقدَّم من نخبة حلول الأعمال.
 
-**العرض المباشر:** https://crowd-shield-nine.vercel.app — رابط بديل: https://dr-elbehairy.github.io/crowd-shield/
+**العرض المباشر:** https://rifada-sa.vercel.app — رابط بديل: https://dr-elbehairy.github.io/rifada/
 
 ## ما الذي يعمل
 - شراء التذكرة مع إصدار الوثيقة برمز QR في الرحلة نفسها.
@@ -25,4 +27,4 @@ npm install && npm run build && npx serve out
 فيديو مختبر الرؤية من Wikimedia Commons (CC BY-SA 4.0 / CC BY 3.0)؛ انظر `cv_pipeline/SOURCES.md`.
 
 ---
-*Crowd Shield — a working prototype of sensor-triggered parametric micro-insurance for mega events (Saudi Insurance Authority Insurance Hackathon 2026). All policy data is synthetic; no real payments.*
+*Rifada — a working prototype of sensor-triggered parametric micro-insurance for mega events (Saudi Insurance Authority Insurance Hackathon 2026). All policy data is synthetic; no real payments.*

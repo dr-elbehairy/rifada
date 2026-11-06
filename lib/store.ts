@@ -11,7 +11,7 @@ interface SimState {
   buy: (p: Omit<MyPolicy, "id" | "issuedAt" | "premium">) => MyPolicy; clearPolicy: () => void; reset: () => void; hydrate: () => void;
 }
 
-const KEY = "crowd-shield-demo-v1";
+const KEY = "rifada-demo-v1";
 const save = (s: Partial<SimState>) => { try { sessionStorage.setItem(KEY, JSON.stringify({ scenario: s.scenario, myPolicy: s.myPolicy, t: s.t })); } catch { /* تخزين غير متاح */ } };
 
 export const useSim = create<SimState>((set, get) => ({
@@ -21,7 +21,7 @@ export const useSim = create<SimState>((set, get) => ({
   setScenario: (scenario) => { set({ scenario }); save({ ...get(), scenario }); },
   buy: (p) => {
     const rnd = Math.floor(Math.random() * 90000) + 10000;
-    const pol: MyPolicy = { ...p, id: `CS-2027-${rnd}`, premium: TERMS.premium, issuedAt: new Date().toISOString() };
+    const pol: MyPolicy = { ...p, id: `RF-2027-${rnd}`, premium: TERMS.premium, issuedAt: new Date().toISOString() };
     set({ myPolicy: pol }); save({ ...get(), myPolicy: pol }); return pol;
   },
   clearPolicy: () => { set({ myPolicy: null }); save({ ...get(), myPolicy: null }); },

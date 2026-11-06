@@ -2,7 +2,7 @@ import Link from "next/link";
 import { asset } from "@/lib/base";
 
 const STEPS = [
-  { n: "1", t: "اشترِ تذكرة", d: "أضف الدرع بـ 8 ريالات في رحلة الشراء نفسها؛ تُصدر الوثيقة برمز QR في أقل من ثانية.", href: "/buy/", cta: "شراء التذكرة" },
+  { n: "1", t: "اشترِ تذكرة", d: "أضف حماية رِفادة بـ 8 ريالات في رحلة الشراء نفسها؛ تُصدر الوثيقة برمز QR في أقل من ثانية.", href: "/buy/", cta: "شراء التذكرة" },
   { n: "2", t: "شغّل الفعالية", d: "في غرفة المخاطر: أرصاد وحساسات وكاميرات، وأوراكل يطبّق قاعدة المصدرين لحظة بلحظة.", href: "/control/", cta: "غرفة المخاطر" },
   { n: "3", t: "استلم التعويض", d: "عند تحقق المؤشر يصل المبلغ لمحفظة الزائر خلال دقائق، بلا مطالبة ولا مستندات.", href: "/policy/", cta: "وثيقتي" },
   { n: "4", t: "اقرأ التقرير", d: "تقرير آلي للمنظّم والمكتتب والهيئة: المؤشرات والمصادر والأثر المالي وتوصيات السلامة.", href: "/report/", cta: "التقرير" },
@@ -15,13 +15,14 @@ export default function Home() {
         <div className="mx-auto max-w-[1400px] px-4 py-14 grid lg:grid-cols-[1.25fr_1fr] gap-10 items-center">
           <div>
             <div className="text-gold font-semibold text-[14px]">برمجان التأمين 2026 · المسار 04 الفعاليات الكبرى والتجمعات الحاشدة</div>
-            <h1 className="text-[44px] font-bold leading-tight mt-3">درع الحشود</h1>
-            <p className="text-[20px] mt-3 leading-relaxed text-[#e5e9f5]">تأمين بارامتري فوري للفعاليات الكبرى يُفعَّل بالرصد الذكي، لا بالمطالبة.</p>
+            <h1 className="text-[44px] font-bold leading-tight mt-3">رِفادة</h1>
+            <p className="text-[20px] mt-3 leading-relaxed text-[#e5e9f5]">حماية فورية لضيوف المملكة: تأمين بارامتري للفعاليات الكبرى يُفعَّل بالرصد الذكي، لا بالمطالبة.</p>
+            <p className="text-[13.5px] mt-2 text-gold/90">الرِّفادة في تاريخ مكة ضيافة الحجاج وخدمتهم؛ ونعيدها اليوم حمايةً تصل إلى الضيف في اللحظة التي يحتاجها.</p>
             <p className="text-[14.5px] mt-4 leading-relaxed text-[#c9d1ea] max-w-[640px]">وثيقة مصغّرة تُدمج في تذكرة الفعالية، وتصرف تعويضًا ثابتًا تلقائيًا عند تحقق مؤشر مقيس من مصدرين رسميين: الإجهاد الحراري، أو حادث حشد مرصود بالرؤية الحاسوبية ومؤكَّد ببلاغ رسمي، أو إلغاء الفعالية. ومعها غرفة مخاطر لحظية مشتركة بين المنظّم وشركة التأمين وهيئة التأمين.</p>
             <div className="flex flex-wrap gap-3 mt-7">
               <Link href="/buy/" className="bg-gold text-navy font-bold rounded-xl px-6 py-3">ابدأ العرض التجريبي</Link>
               <Link href="/control/" className="border border-white/40 rounded-xl px-6 py-3 font-semibold">غرفة المخاطر مباشرة</Link>
-              <a href={asset("/video/crowd-shield-demo.mp4")} target="_blank" rel="noreferrer" className="border border-gold/60 text-gold rounded-xl px-6 py-3 font-semibold">▶ فيديو العرض (2:31)</a>
+              <a href={asset("/video/rifada-demo.mp4")} target="_blank" rel="noreferrer" className="border border-gold/60 text-gold rounded-xl px-6 py-3 font-semibold">▶ فيديو العرض (2:38)</a>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-3">

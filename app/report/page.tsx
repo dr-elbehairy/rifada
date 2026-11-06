@@ -26,7 +26,7 @@ export default function Report() {
       </div>
 
       <div className="border-b-4 border-gold pb-4 mb-5">
-        <div className="text-[12.5px] font-semibold text-goldd">درع الحشود · تقرير ما بعد الفعالية · يُولَّد آليًا خلال 24 ساعة</div>
+        <div className="text-[12.5px] font-semibold text-goldd">رِفادة · تقرير ما بعد الفعالية · يُولَّد آليًا خلال 24 ساعة</div>
         <h1 className="text-[28px] font-bold text-navy mt-1">{EVENT.short}</h1>
         <p className="text-[13.5px] text-muted mt-1">{EVENT.venue} · {EVENT.date} · {SCENARIOS[scenario].name}</p>
       </div>

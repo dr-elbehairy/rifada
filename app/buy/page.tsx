@@ -25,7 +25,7 @@ export default function Buy() {
 
   const pay = () => {
     const t0 = performance.now();
-    if (!shield) { setIssued(null); setStep(3); setLog(["تذكرة بلا درع: لا وثيقة"]); return; }
+    if (!shield) { setIssued(null); setStep(3); setLog(["تذكرة بلا حماية رِفادة: لا وثيقة"]); return; }
     const p = buy({ holder: name, zone: tk.zone, gate: tk.gate, seat: tk.seat, ticket: tk.price });
     const h = sha256(JSON.stringify(p));
     setIssued(p);
@@ -41,7 +41,7 @@ export default function Buy() {
 
   return (
     <div className="mx-auto max-w-[1300px] px-4 py-6">
-      <PageHead kicker="رحلة الزائر — الخطوة 1" title="شراء التذكرة مع درع الحشود" sub="الوثيقة تُصدر لحظة الدفع ضمن رحلة شراء التذكرة نفسها: لا نموذج، لا أسئلة، ولا رحلة منفصلة. الشروط كلها على شاشة واحدة قبل الدفع." />
+      <PageHead kicker="رحلة الزائر — الخطوة 1" title="شراء التذكرة مع رِفادة" sub="الوثيقة تُصدر لحظة الدفع ضمن رحلة شراء التذكرة نفسها: لا نموذج، لا أسئلة، ولا رحلة منفصلة. الشروط كلها على شاشة واحدة قبل الدفع." />
       <div className="grid lg:grid-cols-[400px_1fr] gap-8 items-start">
         <Phone>
           <div className="bg-navy text-white px-5 pt-10 pb-4">
@@ -65,7 +65,7 @@ export default function Buy() {
             <div className="p-4 fade-in">
               <div className="rounded-2xl border-2 border-gold bg-[#fdf9ee] p-4">
                 <div className="flex items-center justify-between">
-                  <div className="font-bold text-navy text-[15px]">🛡 درع الحشود</div>
+                  <div className="font-bold text-navy text-[15px]">🛡 رِفادة</div>
                   <label className="flex items-center gap-2 text-[13px] font-semibold"><input type="checkbox" checked={shield} onChange={(e) => setShield(e.target.checked)} className="w-4 h-4 accent-[#1c2a5d]" /> أضف بـ {TERMS.premium} ر.س</label>
                 </div>
                 <p className="text-[12px] text-muted mt-1">حماية فورية طوال الفعالية؛ التعويض يصلك تلقائيًا بلا مطالبة.</p>
@@ -86,7 +86,7 @@ export default function Buy() {
               <label className="block text-[12.5px] text-muted">الاسم كما في الهوية<input value={name} onChange={(e) => setName(e.target.value)} className="mt-1 w-full border border-line rounded-lg px-3 py-2 text-ink" /></label>
               <div className="rounded-xl bg-fill p-3 text-[13px] space-y-1">
                 <div className="flex justify-between"><span>{tk.title}</span><span className="num">{tk.price} ر.س</span></div>
-                {shield && <div className="flex justify-between"><span>درع الحشود</span><span className="num">{TERMS.premium} ر.س</span></div>}
+                {shield && <div className="flex justify-between"><span>رِفادة</span><span className="num">{TERMS.premium} ر.س</span></div>}
                 <div className="flex justify-between font-bold text-navy border-t border-line pt-1"><span>الإجمالي</span><span className="num">{total} ر.س</span></div>
               </div>
               {shield && (
@@ -106,13 +106,13 @@ export default function Buy() {
                   <div className="text-[40px]">✓</div>
                   <div className="font-bold text-navy text-[16px]">تم إصدار الوثيقة</div>
                   <div className="num text-[13px] text-muted">{issued.id}</div>
-                  <div className="my-4 grid place-items-center"><QRCodeSVG value={`CROWD-SHIELD|${issued.id}|${issued.zone}|${issued.gate}`} size={150} fgColor="#1c2a5d" /></div>
+                  <div className="my-4 grid place-items-center"><QRCodeSVG value={`RIFADA|${issued.id}|${issued.zone}|${issued.gate}`} size={150} fgColor="#1c2a5d" /></div>
                   <div className="text-[12.5px] text-ink">{issued.seat}</div>
                   <Link href="/policy/" className="block w-full bg-navy text-white rounded-xl py-3 font-bold mt-4">افتح وثيقتي</Link>
                   <Link href="/control/" className="block w-full border border-navy text-navy rounded-xl py-3 font-bold mt-2">تابع من غرفة المخاطر</Link>
                 </>
               ) : (
-                <><div className="font-bold text-navy mt-6">تمت التذكرة بلا حماية</div><button onClick={() => setStep(1)} className="mt-4 text-navy underline text-[13px]">أضف الدرع</button></>
+                <><div className="font-bold text-navy mt-6">تمت التذكرة بلا حماية</div><button onClick={() => setStep(1)} className="mt-4 text-navy underline text-[13px]">أضف حماية رِفادة</button></>
               )}
             </div>
           )}
